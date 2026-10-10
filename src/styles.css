@@ -1325,3 +1325,26 @@ h1, h2, h3, p, label, dd { overflow-wrap: anywhere; }
  .auth-intro img, .onboarding-content > img { height: 150px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; } }
+
+/* Touch hit areas retain compact visual indicators without crowding rows. */
+.touch-checkbox, .touch-switch { position: relative; }
+.touch-checkbox::before, .touch-switch::before { content: ''; position: absolute; min-width: 44px; min-height: 44px; inset: 50% auto auto 50%; transform: translate(-50%,-50%); }
+.touch-switch { direction: ltr; }
+.review-item-heading { min-height: 44px; }
+.review-item-heading .step-number { width: 24px; height: 24px; font-size: .75rem; }
+.quick-link { grid-template-columns: auto minmax(0,1fr); }
+.quick-link > svg { display: none; }
+.quick-link h2 { overflow-wrap: normal; font-size: .8125rem; }
+.form-divider { text-align: center; font-size: .875rem; color: var(--muted-foreground); margin-block: 1rem; }
+.social-signin { width: 100%; min-height: 48px; }
+.google-letter { font-family: var(--font-brand); font-weight: 800; }
+.auth-footer a { color: var(--positive); text-decoration: underline; text-underline-offset: 4px; }
+.product-detail-heading { display: grid; gap: 1rem; }
+.product-detail-heading > span { margin-inline: auto; }
+.product-detail-heading h2 { font-size: 1.125rem; }
+@media (min-width: 600px) {
+ .quick-link { grid-template-columns: auto minmax(0,1fr) auto; }
+ .quick-link > svg { display: block; }
+ .quick-link h2 { font-size: 1rem; }
+ .product-detail-heading { grid-template-columns: auto minmax(0,1fr); }
+}

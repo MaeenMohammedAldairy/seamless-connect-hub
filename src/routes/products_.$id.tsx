@@ -27,7 +27,7 @@ function ProductDetail() {
       {!p ? <NotFoundBox /> : (
         <>
           <div className="rounded-2xl border bg-[var(--mint-surface)] p-4">
-            <div className="flex gap-4">
+            <div className="product-detail-heading">
               <span className="flex size-32 shrink-0 items-center justify-center rounded-xl bg-card text-primary"><p.icon className="size-16" /></span>
               <div className="flex-1 space-y-2">
                 <span className="inline-block rounded-full bg-primary px-3 py-0.5 text-xs text-primary-foreground">{p.type}</span>
