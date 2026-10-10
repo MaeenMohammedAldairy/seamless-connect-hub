@@ -1,0 +1,5 @@
+- [x] Import all original pages and preserve existing integrations.
+- [ ] Correct shared and page-specific responsive layouts.
+- [ ] Test every route at all ten requested widths and landscape sizes.
+- [ ] Verify navigation, filters, forms, and preview dialog.
+- [ ] Check authenticated saved settings: requires access to original account.
