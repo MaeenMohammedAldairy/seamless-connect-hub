@@ -13,14 +13,15 @@ export function DetailPage({ title, back, active, children }: { title: string; b
   ];
   return (
     <main className="dashboard-shell" dir="rtl">
-      <header className="relative flex items-center justify-center py-2">
-        <Link to={back} aria-label="رجوع" className="absolute right-2 text-foreground">
+      <header className="shared-title-header py-2">
+        <Link to={back} aria-label="رجوع" className="text-foreground">
           <ChevronRight className="size-7" />
         </Link>
         <div className="brand-wordmark" dir="ltr">
           <MenaFlowMark />
           <span>MenaFlow</span>
         </div>
+        <span aria-hidden="true" />
       </header>
       <h1 className="py-3 text-center text-2xl font-bold">{title}</h1>
       <div className="flex flex-col gap-3 px-2 pb-6">{children}</div>

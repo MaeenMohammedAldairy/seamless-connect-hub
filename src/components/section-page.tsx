@@ -9,6 +9,7 @@ import {
   Share2,
   type LucideIcon,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { MenaFlowMark } from "@/components/menaflow-brand";
 
 export function SectionPage({
@@ -40,14 +41,15 @@ export function SectionPage({
   ];
   return (
     <main className="dashboard-shell" dir="rtl">
-      <header className="relative flex items-center justify-center py-2">
-        <Link to="/" aria-label="رجوع" className="absolute right-2 text-foreground">
+      <header className="shared-title-header py-2">
+        <Link to="/" aria-label="رجوع" className="text-foreground">
           <ChevronRight className="size-7" />
         </Link>
         <div className="brand-wordmark" dir="ltr">
           <MenaFlowMark />
           <span>MenaFlow</span>
         </div>
+        <span aria-hidden="true" />
       </header>
       <section className="flex flex-col items-center px-4 pt-4 text-center">
         <span className={`stat-icon stat-${tone} !size-20 !rounded-3xl`}>
@@ -57,9 +59,9 @@ export function SectionPage({
         <p className="mt-2 max-w-sm leading-7 text-muted-foreground">{description}</p>
       </section>
       <div className="px-2 pt-5">{beforeFilters}</div>
-      <div className="flex gap-2 overflow-x-auto px-2 py-4">
+      <div className="filter-bar">
         {filters.map((f) => (
-          <button
+          <Button variant={filter === f ? "default" : "outline"}
             key={f}
             onClick={() => setFilter(f)}
             className={`shrink-0 rounded-xl border px-4 py-2 text-sm transition ${
@@ -69,7 +71,7 @@ export function SectionPage({
             }`}
           >
             {f}
-          </button>
+          </Button>
         ))}
       </div>
       <div className="flex flex-col gap-3 px-2 pb-6">{children(filter ?? "الكل")}</div>

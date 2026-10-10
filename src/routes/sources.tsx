@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { MenaFlowMark } from "@/components/menaflow-brand";
 import { SocialIcon, type SocialPlatform } from "@/components/social-icon";
+import { PageHeader } from "@/components/page-header";
 import { AppNav } from "@/components/app-nav";
 
 export const Route = createFileRoute("/sources")({
@@ -42,15 +43,7 @@ function Sources() {
   const [saved, setSaved] = useState(false);
   return (
     <main className="dashboard-shell" dir="rtl">
-      <header className="flex items-center justify-between px-2">
-        <div className="flex items-center gap-2">
-          <span className="flex size-12 items-center justify-center rounded-full bg-[var(--mint-surface)] text-primary"><User /></span>
-          <div className="hidden text-sm sm:block"><p className="font-bold">أحمد محمد أحمد</p><span className="text-muted-foreground">مدير الحساب</span></div>
-          <ChevronDown className="size-4" />
-        </div>
-        <div className="brand-wordmark" dir="ltr"><MenaFlowMark /><span>MenaFlow</span></div>
-        <span className="relative"><Bell className="size-7" /><span className="notification-count">3</span></span>
-      </header>
+      <PageHeader />
 
       <section className="px-2 pt-5">
         <h1 className="flex items-center gap-2 text-3xl font-bold">مصادر المحتوى <Sparkles className="size-6 text-primary" /></h1>
@@ -67,7 +60,7 @@ function Sources() {
 
       <div className="flex flex-col gap-3 px-2 py-5">
         <section className="rounded-2xl border bg-card p-4 shadow-sm">
-          <div className="flex items-center justify-between">
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
             <h2 className="flex items-center gap-3 text-xl font-bold"><SocialIcon platform="whatsapp" /> مصدر واتساب</h2>
             <span className="flex items-center gap-2 rounded-full bg-[var(--green-light)] px-3 py-1 text-sm text-primary"><span className="size-2 rounded-full bg-primary" />متصل</span>
           </div>
